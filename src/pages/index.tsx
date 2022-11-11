@@ -1,8 +1,10 @@
 import Head from 'next/head'
 import Image from 'next/image'
-import styles from '../styles/Home.module.css'
+import styles from '../../styles/Home.module.css'
 
 export default function Home() {
+  console.log('env', process.env.NEXT_PUBLIC_API_MOCKING)
+
   return (
     <div className={styles.container}>
       <Head>
