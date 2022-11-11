@@ -1,4 +1,4 @@
-export const initMocks = async () => {
+const initMocks = async () => {
   if (process.env.NEXT_PUBLIC_API_MOCKING === 'true') {
     if (typeof window === 'undefined') {
       const { server } = await import('./server')
@@ -9,3 +9,7 @@ export const initMocks = async () => {
     }
   }
 }
+
+initMocks()
+
+export {}

@@ -1,9 +1,18 @@
 import Head from 'next/head'
 import Image from 'next/image'
+import { useEffect } from 'react'
+import axios from 'axios'
+
 import styles from '../../styles/Home.module.css'
+import { API_URL } from '../config'
 
 export default function Home() {
-  console.log('env', process.env.NEXT_PUBLIC_API_MOCKING)
+  useEffect(() => {
+    (async () => {
+      const response = await axios.get(`${API_URL}/users`)
+      console.log('response', response)
+    })()
+  }, [])
 
   return (
     <div className={styles.container}>
