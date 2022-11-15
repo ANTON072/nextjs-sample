@@ -1,4 +1,4 @@
-// import { UserProvider } from '@auth0/nextjs-auth0';
+import { UserProvider } from '@auth0/nextjs-auth0';
 import type { AppProps } from 'next/app'
 import { useCallback, useEffect, useState } from 'react'
 
@@ -29,5 +29,5 @@ export default function App({ Component, pageProps }: AppProps) {
     return <Component {...pageProps} />
   }, [Component, pageProps, isReadyMsw])
 
-  return <>{render()}</>
+  return <UserProvider>{render()}</UserProvider>
 }
